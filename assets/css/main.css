@@ -238,6 +238,7 @@ h3 { font-size: 1.7rem; }
 
 .pill-link:hover {
   transform: translateY(-2px);
+  color: var(--bling-blau);
 }
 
 /* Latest Comic Feature */
@@ -1257,5 +1258,126 @@ footer p {
     max-height: 500px;
     border-width: 4px;
     box-shadow: 4px 4px 0 var(--shadow-purple);
+  }
+}
+
+/* About Page Styles */
+.about-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.about-section {
+  margin-bottom: 4rem;
+}
+
+.about-section .section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  color: var(--goldenrod);
+  text-shadow: 3px 3px 0 var(--heavy-ink);
+  transform: rotate(-1deg);
+}
+
+.about-comic {
+  background: var(--paper-white);
+  border: 6px solid var(--heavy-ink);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transform: rotate(0.5deg);
+  box-shadow: 8px 8px 0 var(--shadow-purple);
+  position: relative;
+}
+
+.about-comic:nth-child(even) {
+  transform: rotate(-0.5deg);
+}
+
+.comic-series-title {
+  color: var(--neon-orchid);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.about-content .pill-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.character-card {
+  background: var(--toxic-lime);
+  border: 5px solid var(--heavy-ink);
+  padding: 1.5rem;
+  transform: rotate(-1deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 6px 6px 0 var(--heavy-ink);
+}
+
+.character-card:nth-child(2) {
+  transform: rotate(1deg);
+  background: var(--goldenrod);
+}
+
+.character-card:nth-child(3) {
+  transform: rotate(-0.5deg);
+  background: var(--glass-aqua);
+}
+
+.character-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 8px 8px 0 var(--shadow-purple);
+}
+
+.character-name {
+  font-size: 1.6rem;
+  color: var(--heavy-ink);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.character-description {
+  color: var(--heavy-ink);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1.5rem 1rem 3rem;
+  }
+  
+  .about-section .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .comic-series-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-comic {
+    padding: 1.5rem;
+  }
+  
+  .characters-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
