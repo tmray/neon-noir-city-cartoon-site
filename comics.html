@@ -1,0 +1,97 @@
+---
+layout: default
+title: Comics
+permalink: /comics/
+---
+
+<div class="comics-hub">
+  <header class="page-header">
+    <h1 class="page-title">Comics</h1>
+    <p class="page-intro">Two ongoing series of indie webcomics</p>
+  </header>
+
+  <div class="series-showcase">
+    <!-- Then This Happened -->
+    <section class="series-feature">
+      <div class="series-feature-header">
+        <h2 class="series-feature-title">
+          <a href="/then-this-happened/">Then This Happened...</a>
+        </h2>
+        <p class="series-tagline">A daily webcomic diary</p>
+      </div>
+      
+      <p class="series-feature-description">
+        A personal webcomic diary where I draw about something that happened each day - 
+        funny, random, or just thinking out loud.
+      </p>
+      
+      <div class="series-latest">
+        <h3>Latest Updates</h3>
+        <div class="comics-preview-grid">
+          {% assign latest_tth = site.then_this_happened | sort: 'date' | reverse | limit: 3 %}
+          {% for comic in latest_tth %}
+            <article class="comic-preview-card">
+              <a href="{{ comic.url | relative_url }}">
+                {% if comic.comic_image %}
+                <div class="comic-preview-thumbnail">
+                  <img src="{{ comic.comic_image | relative_url }}" alt="{{ comic.title }}">
+                </div>
+                {% endif %}
+                <h4>{{ comic.title }}</h4>
+                <time datetime="{{ comic.date | date_to_xmlschema }}">
+                  {{ comic.date | date: "%b %d, %Y" }}
+                </time>
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <a href="/then-this-happened/" class="series-archive-link">
+        View All Episodes →
+      </a>
+    </section>
+
+    <!-- Bobert and the Monster -->
+    <section class="series-feature">
+      <div class="series-feature-header">
+        <h2 class="series-feature-title">
+          <a href="/bobert-and-the-monster/">Bobert and the Monster</a>
+        </h2>
+        <p class="series-tagline">Wacky neighbor comedy</p>
+      </div>
+      
+      <p class="series-feature-description">
+        Bobert, a regular human, loves to pester his monstrous neighbor (who thinks "Monster" 
+        is just a normal name). Get ready for some dumb, stupid, wacky fun in the style of 
+        classic 60s & 70s comics and early 2000s Cartoon Network shows!
+      </p>
+      
+      <div class="series-latest">
+        <h3>Latest Updates</h3>
+        <div class="comics-preview-grid">
+          {% assign latest_bobert = site.bobert_and_the_monster | sort: 'date' | reverse | limit: 3 %}
+          {% for comic in latest_bobert %}
+            <article class="comic-preview-card">
+              <a href="{{ comic.url | relative_url }}">
+                {% if comic.comic_image %}
+                <div class="comic-preview-thumbnail">
+                  <img src="{{ comic.comic_image | relative_url }}" alt="{{ comic.title }}">
+                </div>
+                {% endif %}
+                <h4>{{ comic.title }}</h4>
+                <time datetime="{{ comic.date | date_to_xmlschema }}">
+                  {{ comic.date | date: "%b %d, %Y" }}
+                </time>
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <a href="/bobert-and-the-monster/" class="series-archive-link">
+        View All Episodes →
+      </a>
+    </section>
+  </div>
+</div>

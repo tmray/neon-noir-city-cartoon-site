@@ -1,0 +1,25 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="hero" style="padding: 60px 20px;">
+  <h1 class="hero-title">Blog Posts</h1>
+  <p class="hero-subtitle">Thoughts, processes, and creative musings</p>
+</div>
+
+<section class="content-grid">
+  <div class="zine-grid">
+    {% for post in site.posts %}
+    <article class="grid-card grid-card--blog">
+      <div class="card-inner">
+        <h3 class="card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <p class="card-date">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

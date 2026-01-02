@@ -1,0 +1,26 @@
+---
+layout: default
+title: Videos
+---
+
+<div class="hero" style="padding: 60px 20px;">
+  <h1 class="hero-title">Videos</h1>
+  <p class="hero-subtitle">Tutorials, process videos, and creative content</p>
+</div>
+
+<section class="content-grid">
+  <div class="zine-grid">
+    {% for video in site.videos %}
+    <article class="grid-card grid-card--video">
+      <div class="card-inner">
+        <span class="card-badge">VIDEO</span>
+        <h3 class="card-title">
+          <a href="{{ video.url | relative_url }}">{{ video.title }}</a>
+        </h3>
+        <p class="card-date">{{ video.date | date: "%B %d, %Y" }}</p>
+        <p class="card-excerpt">{{ video.excerpt | strip_html | truncatewords: 20 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

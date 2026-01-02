@@ -1,0 +1,199 @@
+---
+layout: default
+---
+
+<article class="comic-page">
+  <div class="comic-header">
+    <h1 class="comic-title">{{ page.title }}</h1>
+    <div class="comic-meta">
+      <span class="series-badge">{{ page.series }}</span>
+      {% if page.issue_number %}
+      <span class="issue-number">Issue #{{ page.issue_number }}</span>
+      {% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    </div>
+  </div>
+
+  <!-- Desktop: Full page view -->
+  <div class="comic-image-container desktop-view">
+    {% if page.comic_image %}
+    <img src="{{ page.comic_image | relative_url }}" alt="{% if page.alt_text %}{{ page.alt_text }}{% else %}{{ page.title }}{% endif %}" class="comic-image">
+    {% endif %}
+  </div>
+
+  <!-- Mobile: Panel-by-panel view or zoom/pan -->
+  {% if page.panel_images %}
+  <div class="mobile-view-options">
+    <button class="view-toggle active" data-view="panels">Panel View</button>
+    <button class="view-toggle" data-view="fullpage">Full Page</button>
+  </div>
+
+  <!-- Mobile Panel View -->
+  <div class="comic-panels-container mobile-view active" id="panel-view">
+    <div class="panel-viewer">
+      {% for panel in page.panel_images %}
+      <div class="panel-slide" data-panel="{{ forloop.index }}">
+        <img src="{{ panel | relative_url }}" alt="{% if page.alt_text %}{{ page.alt_text }} - Panel {{ forloop.index }}{% else %}{{ page.title }} - Panel {{ forloop.index }}{% endif %}">
+      </div>
+      {% endfor %}
+    </div>
+    <div class="panel-controls">
+      <button class="panel-nav prev" aria-label="Previous panel">←</button>
+      <span class="panel-counter">
+        <span class="current-panel">1</span> / <span class="total-panels">{{ page.panel_images.size }}</span>
+      </span>
+      <button class="panel-nav next" aria-label="Next panel">→</button>
+    </div>
+  </div>
+
+  <!-- Mobile Full Page Zoom View -->
+  <div class="comic-fullpage-mobile mobile-view" id="fullpage-view">
+    {% if page.comic_image %}
+    <div class="zoom-container">
+      <img src="{{ page.comic_image | relative_url }}" alt="{% if page.alt_text %}{{ page.alt_text }}{% else %}{{ page.title }}{% endif %}" class="comic-image-zoom">
+    </div>
+    <p class="zoom-hint">👆 Scroll and pinch to zoom</p>
+    {% endif %}
+  </div>
+  {% else %}
+  <!-- Mobile: Just full page if no panels defined -->
+  <div class="comic-fullpage-mobile mobile-view active">
+    {% if page.comic_image %}
+    <div class="zoom-container">
+      <img src="{{ page.comic_image | relative_url }}" alt="{% if page.alt_text %}{{ page.alt_text }}{% else %}{{ page.title }}{% endif %}" class="comic-image-zoom">
+    </div>
+    <p class="zoom-hint">👆 Scroll and pinch to zoom</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if content != "" %}
+  <div class="comic-notes">
+    <h2>Creator's Notes</h2>
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <nav class="comic-navigation">
+    {% if page.collection == 'then_this_happened' %}
+      {% assign comics = site.then_this_happened | sort: 'issue_number' %}
+    {% elsif page.collection == 'bobert_and_the_monster' %}
+      {% assign comics = site.bobert_and_the_monster | sort: 'issue_number' %}
+    {% endif %}
+    
+    {% for comic in comics %}
+      {% if comic.url == page.url %}
+        {% unless forloop.first %}
+          {% assign prev_comic = prev %}
+        {% endunless %}
+        {% unless forloop.last %}
+          {% assign next_index = forloop.index %}
+        {% endunless %}
+      {% endif %}
+      {% assign prev = comic %}
+    {% endfor %}
+    
+    {% if next_index %}
+      {% assign next_comic = comics[next_index] %}
+    {% endif %}
+    
+    {% if prev_comic %}
+      <a href="{{ prev_comic.url | relative_url }}" class="nav-btn prev-btn">← Previous</a>
+    {% else %}
+      <span class="nav-btn disabled">← Previous</span>
+    {% endif %}
+
+    <a href="/{{ page.series_slug }}/" class="nav-btn archive-btn">Archive</a>
+
+    {% if next_comic %}
+      <a href="{{ next_comic.url | relative_url }}" class="nav-btn next-btn">Next →</a>
+    {% else %}
+      <span class="nav-btn disabled">Next →</span>
+    {% endif %}
+  </nav>
+</article>
+
+<script>
+// Panel navigation for mobile comic view
+document.addEventListener('DOMContentLoaded', function() {
+  const viewer = document.querySelector('.panel-viewer');
+  if (!viewer) return; // Exit if no panel viewer exists
+  
+  const slides = document.querySelectorAll('.panel-slide');
+  const prevBtn = document.querySelector('.panel-nav.prev');
+  const nextBtn = document.querySelector('.panel-nav.next');
+  const currentPanel = document.querySelector('.current-panel');
+  
+  let currentIndex = 0;
+  const totalPanels = slides.length;
+  
+  function updatePanel() {
+    viewer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    currentPanel.textContent = currentIndex + 1;
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === totalPanels - 1;
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updatePanel();
+      }
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < totalPanels - 1) {
+        currentIndex++;
+        updatePanel();
+      }
+    });
+  }
+  
+  // Touch swipe support
+  let touchStartX = 0;
+  viewer.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+  
+  viewer.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && currentIndex < totalPanels - 1) {
+        currentIndex++;
+      } else if (diff < 0 && currentIndex > 0) {
+        currentIndex--;
+      }
+      updatePanel();
+    }
+  });
+  
+  // View toggle between panel and fullpage on mobile
+  const toggleButtons = document.querySelectorAll('.view-toggle');
+  const panelView = document.getElementById('panel-view');
+  const fullpageView = document.getElementById('fullpage-view');
+  
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const viewType = button.getAttribute('data-view');
+      
+      // Update button states
+      toggleButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Toggle views
+      if (viewType === 'panels') {
+        panelView.classList.add('active');
+        fullpageView.classList.remove('active');
+      } else {
+        panelView.classList.remove('active');
+        fullpageView.classList.add('active');
+      }
+    });
+  });
+});
+</script>

@@ -1,0 +1,40 @@
+---
+layout: default
+title: "Bobert and the Monster"
+permalink: /bobert-and-the-monster/
+---
+
+<div class="series-page">
+  <header class="series-header">
+    <h1 class="series-title">Bobert and the Monster</h1>
+    <p class="series-description">
+      Bobert, a regular human, loves to pester his monstrous neighbor (who thinks "Monster" 
+      is just a normal name). Get ready for some dumb, stupid, wacky fun in the style of 
+      classic 60s & 70s comics and early 2000s Cartoon Network shows!
+    </p>
+  </header>
+
+  <div class="comics-grid">
+    {% assign comics = site.bobert_and_the_monster | sort: 'date' | reverse %}
+    {% for comic in comics %}
+      <article class="comic-card">
+        <a href="{{ comic.url | relative_url }}" class="comic-link">
+          {% if comic.comic_image %}
+          <div class="comic-thumbnail">
+            <img src="{{ comic.comic_image | relative_url }}" alt="{{ comic.title }}">
+          </div>
+          {% endif %}
+          <div class="comic-info">
+            <h3 class="comic-card-title">{{ comic.title }}</h3>
+            {% if comic.issue_number %}
+            <p class="comic-issue">#{{ comic.issue_number }}</p>
+            {% endif %}
+            <time class="comic-card-date" datetime="{{ comic.date | date_to_xmlschema }}">
+              {{ comic.date | date: "%B %d, %Y" }}
+            </time>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</div>

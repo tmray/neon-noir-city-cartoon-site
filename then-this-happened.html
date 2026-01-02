@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Then This Happened..."
+permalink: /then-this-happened/
+---
+
+<div class="series-page">
+  <header class="series-header">
+    <h1 class="series-title">Then This Happened...</h1>
+    <p class="series-description">
+      A personal webcomic diary where I draw about something that happened each day - 
+      funny, random, or just thinking out loud.
+    </p>
+  </header>
+
+  <div class="comics-grid">
+    {% assign comics = site.then_this_happened | sort: 'date' | reverse %}
+    {% for comic in comics %}
+      <article class="comic-card">
+        <a href="{{ comic.url | relative_url }}" class="comic-link">
+          {% if comic.comic_image %}
+          <div class="comic-thumbnail">
+            <img src="{{ comic.comic_image | relative_url }}" alt="{{ comic.title }}">
+          </div>
+          {% endif %}
+          <div class="comic-info">
+            <h3 class="comic-card-title">{{ comic.title }}</h3>
+            {% if comic.issue_number %}
+            <p class="comic-issue">#{{ comic.issue_number }}</p>
+            {% endif %}
+            <time class="comic-card-date" datetime="{{ comic.date | date_to_xmlschema }}">
+              {{ comic.date | date: "%B %d, %Y" }}
+            </time>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</div>

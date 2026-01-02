@@ -1,0 +1,90 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Latest Comic Feature -->
+{% assign all_comics = site.bobert_and_the_monster | concat: site.then_this_happened | sort: 'date' | reverse %}
+{% assign latest_comic = all_comics.first %}
+
+{% if latest_comic %}
+<section class="latest-comic-feature">
+  <div class="latest-comic-header">
+    <h2 class="section-title">Latest Comic</h2>
+    <span class="series-badge">{{ latest_comic.series }}</span>
+  </div>
+  
+  <article class="featured-comic-card">
+    <a href="{{ latest_comic.url | relative_url }}" class="featured-comic-link">
+      {% if latest_comic.comic_image %}
+      <div class="featured-comic-image">
+        <img src="{{ latest_comic.comic_image | relative_url }}" alt="{% if latest_comic.alt_text %}{{ latest_comic.alt_text }}{% else %}{{ latest_comic.title }}{% endif %}">
+      </div>
+      {% endif %}
+      <div class="featured-comic-info">
+        <h3 class="featured-comic-title">{{ latest_comic.title }}</h3>
+        <p class="featured-comic-meta">
+          <time datetime="{{ latest_comic.date | date_to_xmlschema }}">{{ latest_comic.date | date: "%B %d, %Y" }}</time>
+          {% if latest_comic.issue_number %}
+          <span class="issue-number">Issue #{{ latest_comic.issue_number }}</span>
+          {% endif %}
+        </p>
+        {% if latest_comic.excerpt %}
+        <p class="featured-comic-excerpt">{{ latest_comic.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+      </div>
+    </a>
+  </article>
+</section>
+{% endif %}
+
+<div class="hero">
+  <h1 class="hero-title">Welcome to Cosmopolis</h1>
+  <p class="hero-subtitle">Indie comics, creative chaos, and neon dreams</p>
+  <div class="hero-actions">
+    <a class="pill-link" href="{{ '/drawings' | relative_url }}">View the latest art</a>
+    <a class="pill-link alt" href="{{ '/blog' | relative_url }}">Read the process notes</a>
+  </div>
+</div>
+
+<section class="content-grid">
+  <h2 class="section-title">Fresh from the studio</h2>
+  
+  <div class="zine-grid">
+    {% for post in site.posts limit:6 %}
+    <article class="grid-card grid-card--blog">
+      <div class="card-inner">
+        <h3 class="card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <p class="card-date">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="card-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+    
+    {% for video in site.videos limit:3 %}
+    <article class="grid-card grid-card--video">
+      <div class="card-inner">
+        <span class="card-badge">VIDEO</span>
+        <h3 class="card-title">
+          <a href="{{ video.url | relative_url }}">{{ video.title }}</a>
+        </h3>
+        <p class="card-date">{{ video.date | date: "%B %d, %Y" }}</p>
+      </div>
+    </article>
+    {% endfor %}
+    
+    {% for drawing in site.drawings limit:3 %}
+    <article class="grid-card grid-card--drawing">
+      <div class="card-inner">
+        <span class="card-badge">ART</span>
+        <h3 class="card-title">
+          <a href="{{ drawing.url | relative_url }}">{{ drawing.title }}</a>
+        </h3>
+        <p class="card-date">{{ drawing.date | date: "%B %d, %Y" }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

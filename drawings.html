@@ -1,0 +1,26 @@
+---
+layout: default
+title: Drawings
+---
+
+<div class="hero" style="padding: 60px 20px;">
+  <h1 class="hero-title">Drawings</h1>
+  <p class="hero-subtitle">Sketches, finished pieces, and visual experiments</p>
+</div>
+
+<section class="content-grid">
+  <div class="zine-grid">
+    {% for drawing in site.drawings %}
+    <article class="grid-card grid-card--drawing">
+      <div class="card-inner">
+        <span class="card-badge">ART</span>
+        <h3 class="card-title">
+          <a href="{{ drawing.url | relative_url }}">{{ drawing.title }}</a>
+        </h3>
+        <p class="card-date">{{ drawing.date | date: "%B %d, %Y" }}</p>
+        <p class="card-excerpt">{{ drawing.excerpt | strip_html | truncatewords: 15 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

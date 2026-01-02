@@ -1,0 +1,71 @@
+# Mission Hill Indie Comic Site Configuration
+
+title: "HomeMade Cartoons"
+description: "An indie comic creator's portfolio - blogs, videos, and drawings"
+author: "Your Name"
+baseurl: ""
+url: "http://localhost:4000"
+
+# Build settings
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+sass:
+  style: compressed
+
+# Collections
+collections:
+  videos:
+    output: true
+    permalink: /videos/:title/
+  drawings:
+    output: true
+    permalink: /drawings/:title/
+  then_this_happened:
+    output: true
+    permalink: /comics/then-this-happened/:title/
+  bobert_and_the_monster:
+    output: true
+    permalink: /comics/bobert-and-the-monster/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: "videos"
+    values:
+      layout: "video"
+  - scope:
+      path: ""
+      type: "drawings"
+    values:
+      layout: "drawing"
+  - scope:
+      path: ""
+      type: "then_this_happened"
+    values:
+      layout: "comic-page"
+      series: "Then This Happened..."
+      series_slug: "then-this-happened"
+      description: "A personal webcomic diary where I draw about something that happened each day - funny, random, or just thinking out loud."
+  - scope:
+      path: ""
+      type: "bobert_and_the_monster"
+    values:
+      layout: "comic-page"
+      series: "Bobert and the Monster"
+      series_slug: "bobert-and-the-monster"
+      description: "Bobert, a regular human, loves to pester his monstrous neighbor (who thinks 'Monster' is just a normal name). Dumb, stupid, wacky fun in the style of classic 60s & 70s comics and early 2000s Cartoon Network shows!"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

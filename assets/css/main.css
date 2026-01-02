@@ -1,0 +1,1261 @@
+/* Mission Hill Indie Comic CSS - refreshed to feel like an artist's portfolio, not a template */
+:root {
+  --bling-blau: #3252E0;
+  --neon-orchid: #C743E1;
+  --toxic-lime: #B6F54D;
+  --goldenrod: #FFD200;
+  --heavy-ink: #0f111a;
+  --paper-white: #fdf9f3;
+  --night-sky: #0b0d14;
+  --shadow-purple: #5d3aa8;
+  --muted-ink: #8890a2;
+  --card-glow: rgba(199, 67, 225, 0.35);
+  --glass-aqua: #7fd5ff;
+  --storefront-teal: #3eb6b6;
+  --awning-magenta: #c04aa9;
+  --sidewalk-frost: #d8f1ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Patrick Hand', cursive;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(63, 190, 225, 0.40), transparent 44%),
+    radial-gradient(circle at 78% 16%, rgba(50, 82, 224, 0.26), transparent 48%),
+    radial-gradient(circle at 36% 74%, rgba(62, 182, 182, 0.18), transparent 54%),
+    linear-gradient(175deg, rgba(216, 241, 255, 0.85) 0%, rgba(148, 188, 226, 0.55) 45%, rgba(106, 119, 175, 0.80) 100%);
+  color: var(--heavy-ink);
+  line-height: 1.7;
+  font-size: 18px;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Subtle texture and grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 26px 26px, 26px 26px;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: var(--toxic-lime);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--goldenrod);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Libre Franklin', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--heavy-ink);
+}
+
+h1 { font-size: 3.4rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.7rem; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 22px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header / Neon Sign Navigation */
+.site-header {
+  padding: 26px 0 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(15,17,26,0.92), rgba(15,17,26,0.6) 90%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.site-logo {
+  font-size: 1.9rem;
+  color: var(--goldenrod);
+  text-shadow: 2px 2px 0 var(--heavy-ink), 0 0 24px rgba(255,210,0,0.4);
+  letter-spacing: 0.06em;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.nav-sign {
+  position: relative;
+  padding: 12px 16px;
+  background: linear-gradient(130deg, rgba(62,182,182,0.95), rgba(192,74,169,0.9));
+  border: 3px solid var(--paper-white);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 18px rgba(62,182,182,0.45);
+  transform: skew(-1.5deg);
+  overflow: hidden;
+}
+
+.nav-sign::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255,210,0,0.4);
+  mix-blend-mode: screen;
+  box-shadow: inset 0 0 22px rgba(62,182,182,0.35);
+}
+
+.nav-sign__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 22% 32%, rgba(255,255,255,0.18), transparent 42%),
+              radial-gradient(circle at 74% 68%, rgba(62,182,182,0.32), transparent 45%);
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-menu a {
+  color: var(--paper-white);
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  padding: 8px 14px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 6px;
+  background: rgba(0,0,0,0.15);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.25);
+}
+
+.nav-menu a:hover {
+  color: var(--goldenrod);
+  border-color: var(--goldenrod);
+  box-shadow: 0 0 14px rgba(255,210,0,0.55);
+}
+
+/* Hero */
+.hero {
+  margin: 18px auto 70px;
+  padding: 70px 32px;
+  background: var(--night-sky);
+  border: 3px solid rgba(255,255,255,0.18);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+  max-width: 1180px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -20% -10%;
+  background: radial-gradient(circle at 32% 38%, rgba(62,182,182,0.35), transparent 44%),
+              radial-gradient(circle at 76% 46%, rgba(255,210,0,0.18), transparent 48%);
+  filter: blur(8px);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  color: var(--paper-white);
+  text-shadow: 3px 3px 0 var(--heavy-ink), 0 0 24px rgba(50,82,224,0.4);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--toxic-lime);
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 26px;
+  position: relative;
+  z-index: 1;
+}
+
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--toxic-lime), var(--goldenrod));
+  color: var(--heavy-ink);
+  font-family: 'Libre Franklin', sans-serif;
+  letter-spacing: 0.04em;
+  border: 3px solid var(--heavy-ink);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35), 0 0 16px rgba(182,245,77,0.45);
+}
+
+.pill-link.alt {
+  background: linear-gradient(135deg, rgba(253,249,243,0.9), rgba(182,245,77,0.9));
+}
+
+.pill-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Latest Comic Feature */
+.latest-comic-feature {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 0 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.latest-comic-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.latest-comic-header .section-title {
+  margin: 0;
+}
+
+.featured-comic-card {
+  background: var(--paper-white);
+  border: 6px solid var(--heavy-ink);
+  box-shadow: 12px 12px 0 var(--shadow-purple);
+  transform: rotate(-0.5deg);
+  transition: all 0.3s ease;
+}
+
+.featured-comic-card:hover {
+  transform: rotate(0deg) translate(-4px, -4px);
+  box-shadow: 16px 16px 0 var(--shadow-purple);
+}
+
+.featured-comic-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-comic-image {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 6px solid var(--heavy-ink);
+  background: var(--paper-white);
+}
+
+.featured-comic-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.featured-comic-info {
+  padding: 2rem;
+}
+
+.featured-comic-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.featured-comic-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: var(--muted-ink);
+}
+
+.featured-comic-meta .issue-number {
+  background: var(--toxic-lime);
+  color: var(--heavy-ink);
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--heavy-ink);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.featured-comic-excerpt {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--heavy-ink);
+}
+
+/* Sections */
+.section-title {
+  text-align: left;
+  margin-bottom: 18px;
+  color: var(--goldenrod);
+  text-shadow: 1px 1px 0 var(--heavy-ink);
+}
+
+.content-grid {
+  padding: 10px 0 40px;
+}
+
+.zine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  grid-auto-rows: minmax(180px, auto);
+}
+
+/* Cards */
+.grid-card {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  background: linear-gradient(150deg, rgba(216,241,255,0.88), rgba(127,213,255,0.7));
+  border: 4px solid var(--heavy-ink);
+  border-radius: 14px;
+  box-shadow: none;
+  backdrop-filter: blur(1px);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  transform: rotate(-0.6deg);
+}
+
+.grid-card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 4px solid rgba(62,182,182,0.6);
+  transform: translate(6px, 6px);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(15,17,26,0.12) 1px, transparent 1px);
+  background-size: 14px 14px;
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-card:hover {
+  transform: translateY(-6px);
+}
+
+.grid-card:nth-child(3n) { transform: rotate(0.8deg); }
+.grid-card:nth-child(4n) { transform: rotate(-1deg); }
+.grid-card:nth-child(5n) { transform: rotate(0.4deg); }
+
+.grid-card--blog { border-color: rgba(50,82,224,0.45); }
+.grid-card--video { border-color: rgba(199,67,225,0.45); }
+.grid-card--drawing {
+  border-color: var(--heavy-ink);
+  background: var(--paper-white);
+}
+
+.grid-card--drawing::before {
+  border-color: var(--goldenrod);
+  background: transparent;
+}
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.5);
+  color: var(--paper-white);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 999px;
+  font-family: 'Libre Franklin', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.card-title {
+  margin: 12px 0 8px;
+  font-size: 1.35rem;
+}
+
+.card-title a {
+  color: var(--heavy-ink);
+}
+
+.card-title a:hover {
+  color: var(--bling-blau);
+}
+
+.card-date {
+  font-size: 0.95rem;
+  color: var(--shadow-purple);
+  margin-bottom: 10px;
+}
+
+.card-excerpt {
+  color: var(--heavy-ink);
+}
+
+@media (min-width: 900px) {
+  .zine-grid .grid-card:nth-child(5n+1) { grid-column: span 2; }
+  .zine-grid .grid-card:nth-child(7n+3) { grid-row: span 2; }
+}
+
+/* Post & Detail pages */
+.post-content,
+.video-content,
+.drawing-content {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 0 80px;
+  color: var(--heavy-ink);
+  font-size: 22px;
+  line-height: 1.82;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid rgba(255,255,255,0.18);
+}
+
+.post-title {
+  margin-bottom: 10px;
+  color: var(--goldenrod);
+  text-shadow: 2px 2px 0 var(--heavy-ink);
+}
+
+.post-meta {
+  color: var(--muted-ink);
+  font-weight: 700;
+}
+
+.post-content p,
+.video-content p,
+.drawing-content p {
+  margin-bottom: 18px;
+}
+
+.post-content ul,
+.video-content ul,
+.drawing-content ul,
+.post-content ol,
+.video-content ol,
+.drawing-content ol {
+  margin-bottom: 18px;
+  padding-left: 2em;
+  list-style-position: outside;
+}
+
+.post-content li,
+.video-content li,
+.drawing-content li {
+  margin-bottom: 8px;
+}
+
+.post-content img,
+.video-content img,
+.drawing-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 18px rgba(50,82,224,0.35);
+}
+
+.photo-frame {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.8));
+  padding: 14px 14px 54px;
+  border-radius: 10px;
+  border: 2px solid rgba(0,0,0,0.12);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25), 0 0 16px rgba(199,67,225,0.25);
+  display: inline-block;
+}
+
+.photo-frame img {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.28);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 24px rgba(199,67,225,0.3);
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+footer {
+  margin-top: 70px;
+  padding: 36px 0 46px;
+  background: rgba(0,0,0,0.35);
+  border-top: 2px solid rgba(255,255,255,0.12);
+  text-align: center;
+  color: var(--muted-ink);
+}
+
+footer p {
+  font-family: 'Libre Franklin', sans-serif;
+  letter-spacing: 0.04em;
+  color: rgba(253,249,243,0.85);
+}
+
+/* Shadowless mode */
+*, *::before, *::after {
+  box-shadow: none !important;
+}
+
+/* Comic Pages */
+.comic-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.comic-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 6px double var(--heavy-ink);
+  padding: 1.5rem;
+  background: var(--bling-blau);
+  transform: rotate(-0.5deg);
+}
+
+.comic-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--neon-orchid);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0 var(--heavy-ink);
+}
+
+.comic-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+}
+
+.comic-meta time {
+  color: var(--sidewalk-frost);
+}
+
+.series-badge {
+  background: var(--toxic-lime);
+  color: var(--heavy-ink);
+  padding: 0.3rem 0.8rem;
+  border: 3px solid var(--heavy-ink);
+  font-weight: bold;
+  transform: rotate(-2deg);
+}
+
+.issue-number {
+  background: var(--goldenrod);
+  color: var(--heavy-ink);
+  padding: 0.3rem 0.8rem;
+  border: 3px solid var(--heavy-ink);
+  font-weight: bold;
+  transform: rotate(1deg);
+}
+
+.comic-image-container {
+  margin: 2rem 0;
+  border: 8px solid var(--heavy-ink);
+  background: white;
+  padding: 1rem;
+  transform: rotate(0.5deg);
+}
+
+.comic-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid var(--heavy-ink);
+}
+
+.comic-notes {
+  background: var(--goldenrod);
+  border: 6px double var(--heavy-ink);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  transform: rotate(-0.3deg);
+}
+
+.comic-notes h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  color: var(--heavy-ink);
+  text-transform: uppercase;
+}
+
+.comic-notes p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.comic-notes ul,
+.comic-notes ol {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.comic-notes ul {
+  list-style-type: disc;
+}
+
+.comic-notes ol {
+  list-style-type: decimal;
+}
+
+.comic-notes li {
+  margin: 0.5rem 0;
+}
+
+.comic-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 1rem 1.5rem;
+  border: 5px solid var(--heavy-ink);
+  background: var(--neon-orchid);
+  color: var(--heavy-ink);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: translate(-2px, -2px);
+  background: var(--toxic-lime);
+}
+
+.nav-btn.disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.nav-btn.disabled:hover {
+  transform: none;
+}
+
+.archive-btn {
+  background: var(--bling-blau);
+}
+
+.archive-btn:hover {
+  background: var(--goldenrod);
+}
+
+/* Comics Hub & Archives */
+.comics-hub,
+.series-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.series-page .series-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border: 8px double var(--heavy-ink);
+  padding: 2rem;
+  background: var(--neon-orchid);
+  transform: rotate(-1deg);
+}
+
+.series-page .series-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 4px 4px 0 rgba(255, 255, 255, 0.5);
+}
+
+.series-page .series-description {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--paper-white);
+}
+
+.comics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.comic-card {
+  border: 5px solid var(--heavy-ink);
+  background: var(--toxic-lime);
+  transform: rotate(-0.3deg);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.comic-card:nth-child(even) {
+  transform: rotate(0.3deg);
+  background: var(--bling-blau);
+}
+
+.comic-card:hover {
+  transform: rotate(0) scale(1.02);
+}
+
+.comic-card .comic-link {
+  text-decoration: none;
+  color: var(--heavy-ink);
+  display: block;
+}
+
+.comic-thumbnail {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-bottom: 3px solid var(--heavy-ink);
+}
+
+.comic-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.comic-info {
+  padding: 1rem;
+}
+
+.comic-card-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.comic-issue {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1rem;
+  margin: 0 0 0.3rem 0;
+  font-weight: bold;
+}
+
+.comic-card-date {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.comics-hub .page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border: 8px double var(--heavy-ink);
+  padding: 2rem;
+  background: var(--neon-orchid);
+  transform: rotate(-1deg);
+}
+
+.comics-hub .page-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 4px 4px 0 rgba(255, 255, 255, 0.5);
+}
+
+.comics-hub .page-intro {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--sidewalk-frost);
+}
+
+.series-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.series-feature {
+  border: 6px solid var(--heavy-ink);
+  padding: 2rem;
+  background: var(--storefront-teal);
+  transform: rotate(0.5deg);
+}
+
+.series-feature:nth-child(even) {
+  transform: rotate(-0.5deg);
+  background: var(--goldenrod);
+}
+
+.series-feature-header {
+  margin-bottom: 1rem;
+}
+
+.series-feature-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 rgba(255, 255, 255, 0.5);
+}
+
+.series-feature-title a {
+  color: var(--heavy-ink);
+  text-decoration: none;
+}
+
+.series-feature-title a:hover {
+  color: var(--neon-orchid);
+}
+
+.series-tagline {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+  font-style: italic;
+}
+
+.series-feature-description {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.series-latest h3 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  color: var(--heavy-ink);
+  text-transform: uppercase;
+}
+
+.comics-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.comic-preview-card {
+  border: 4px solid var(--heavy-ink);
+  background: white;
+  overflow: hidden;
+}
+
+.comic-preview-card a {
+  text-decoration: none;
+  color: var(--heavy-ink);
+  display: block;
+}
+
+.comic-preview-thumbnail {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-bottom: 3px solid var(--heavy-ink);
+}
+
+.comic-preview-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.comic-preview-card h4 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
+}
+
+.comic-preview-card time {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.9rem;
+  display: block;
+  margin: 0 0.5rem 0.5rem;
+  opacity: 0.8;
+}
+
+.series-archive-link {
+  display: inline-block;
+  padding: 1rem 1rem;
+  border: 4px solid var(--heavy-ink);
+  background: var(--neon-orchid);
+  color: var(--heavy-ink);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.series-archive-link:hover {
+  background: var(--toxic-lime);
+  transform: translate(-2px, -2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .site-nav { flex-direction: column; align-items: flex-start; }
+  .nav-menu { flex-wrap: wrap; }
+  .hero { padding: 56px 22px; }
+  .hero-title { font-size: clamp(2.3rem, 6vw, 3.2rem); }
+  .comics-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  .nav-menu { gap: 10px; }
+  .nav-menu a { font-size: 1rem; }
+  .zine-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .post-title { font-size: clamp(1.9rem, 6vw, 2.3rem); }
+  .post-content,
+  .video-content,
+  .drawing-content {
+    line-height: 1.65;
+  }
+  .comic-title {
+    font-size: 1.8rem;
+  }
+  .series-page .series-title,
+  .comics-hub .page-title {
+    font-size: 2rem;
+  }
+  .comics-grid {
+    grid-template-columns: 1fr;
+  }
+  .comic-navigation {
+    flex-direction: column;
+  }
+  .nav-btn {
+    width: 100%;
+  }
+  .comics-preview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Featured comic mobile adjustments */
+  .latest-comic-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .featured-comic-card {
+    border-width: 4px;
+    box-shadow: 6px 6px 0 var(--shadow-purple);
+  }
+  
+  .featured-comic-card:hover {
+    box-shadow: 8px 8px 0 var(--shadow-purple);
+  }
+  
+  .featured-comic-image {
+    border-bottom-width: 4px;
+  }
+  
+  .featured-comic-image img {
+    max-height: 400px;
+  }
+  
+  .featured-comic-info {
+    padding: 1.5rem;
+  }
+  
+  .featured-comic-title {
+    font-size: 1.6rem;
+  }
+  
+  .featured-comic-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile Comic Viewing Styles */
+.desktop-view {
+  display: block;
+}
+
+.mobile-view {
+  display: none;
+}
+
+.mobile-view-options {
+  display: none;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.view-toggle {
+  padding: 0.75rem 1.5rem;
+  background: var(--paper-white);
+  border: 3px solid var(--heavy-ink);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-toggle:hover {
+  background: var(--toxic-lime);
+}
+
+.view-toggle.active {
+  background: var(--neon-orchid);
+  color: var(--heavy-ink);
+  border-width: 4px;
+}
+
+/* Panel-by-panel viewer */
+.comic-panels-container {
+  margin: 2rem 0;
+  border: 6px solid var(--heavy-ink);
+  background: var(--paper-white);
+  box-shadow: 8px 8px 0 var(--shadow-purple);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-viewer {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.panel-slide {
+  min-width: 100%;
+  width: 100%;
+  flex: 0 0 100%;
+  background: var(--paper-white);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.panel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.panel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--toxic-lime);
+  border-top: 4px solid var(--heavy-ink);
+}
+
+.panel-nav {
+  background: var(--heavy-ink);
+  color: var(--toxic-lime);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  transition: all 0.2s ease;
+}
+
+.panel-nav:hover:not(:disabled) {
+  background: var(--neon-orchid);
+  color: var(--heavy-ink);
+}
+
+.panel-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.panel-counter {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--heavy-ink);
+}
+
+/* Full page zoom view for mobile */
+.comic-fullpage-mobile {
+  margin: 2rem 0;
+}
+
+.zoom-container {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  border: 6px solid var(--heavy-ink);
+  background: var(--paper-white);
+  box-shadow: 8px 8px 0 var(--shadow-purple);
+  max-height: 600px;
+}
+
+.comic-image-zoom {
+  cursor: grab;
+  max-width: none;
+  width: 200%; /* Start zoomed in for readability */
+  height: auto;
+  display: block;
+}
+
+.comic-image-zoom:active {
+  cursor: grabbing;
+}
+
+.zoom-hint {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* Mobile responsive overrides */
+@media (max-width: 768px) {
+  /* Optimize heading sizes for mobile */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
+  h4 { font-size: 1.1rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.9rem; }
+  
+  .desktop-view {
+    display: none;
+  }
+  
+  .mobile-view {
+    display: block;
+  }
+  
+  .mobile-view:not(.active) {
+    display: none;
+  }
+  
+  .mobile-view-options {
+    display: flex;
+  }
+  
+  .comic-panels-container {
+    margin: 1rem 0;
+    border-width: 4px;
+    box-shadow: 4px 4px 0 var(--shadow-purple);
+  }
+  
+  .zoom-container {
+    max-height: 500px;
+    border-width: 4px;
+    box-shadow: 4px 4px 0 var(--shadow-purple);
+  }
+}
