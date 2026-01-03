@@ -31,7 +31,7 @@ body {
     linear-gradient(175deg, rgba(216, 241, 255, 0.85) 0%, rgba(148, 188, 226, 0.55) 45%, rgba(106, 119, 175, 0.80) 100%);
   color: var(--heavy-ink);
   line-height: 1.7;
-  font-size: 18px;
+  font-size: 20px;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
@@ -1024,7 +1024,7 @@ footer p {
 }
 
 @media (max-width: 640px) {
-  body { font-size: 17px; }
+  body { font-size: 20px; }
   .nav-menu { 
     gap: 10px;
     row-gap: 12px;
