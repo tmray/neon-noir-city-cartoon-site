@@ -1,0 +1,123 @@
+# Comics & Books Data
+series:
+  - title: "Then This Happened..."
+    slug: then-this-happened
+    tagline: "A webcomic diary documenting life, resilience, and everyday moments."
+    description: |
+      "Then This Happened..." is an ongoing webcomic diary series that started as a way to process 
+      and share the journey through breast cancer, recovery, and life beyond. Each book captures 
+      honest, relatable moments—the tough days, the small victories, and everything in between. 
+      A heartfelt, sometimes humorous chronicle of living through the unexpected.
+    hero_image: 
+    books:
+      - title: "Then This Happened... A diary about breast cancer"
+        subtitle: "Book 1"
+        cover: /assets/images/book-covers/then-this-happened/then-this-happened-book1.jpg
+        description: |
+          The beginning of the journey. A raw, honest diary about facing breast cancer—
+          the diagnosis, treatment, and finding ways to keep going.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B07L1WSFMV"
+          paperback: "https://www.amazon.com/dp/179057384X"
+          
+      - title: "Then This Happened... Now what? One year later"
+        subtitle: "Book 2"
+        cover: /assets/images/book-covers/then-this-happened/then-this-happened-book2.jpg
+        description: |
+          One year post-treatment. Navigating recovery, adjusting to a new normal, 
+          and figuring out what comes next.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B07XVPQJHL"
+          paperback: "https://www.amazon.com/dp/1692600141"
+          
+      - title: "So three years, then this happened..."
+        subtitle: "Book 3"
+        cover: /assets/images/book-covers/then-this-happened/then-this-happened-book3.jpg
+        description: |
+          Three years in. Reflecting on how life has changed, what's been learned, 
+          and moving forward with hope and humor.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B08RC4Q527"
+          paperback: "https://www.amazon.com/dp/B08R8JLJ61"
+          
+      - title: "Then This Happened... Home Working"
+        subtitle: "Book 4"
+        cover: /assets/images/book-covers/then-this-happened/then-this-happened-book4.jpg
+        description: |
+          Life during lockdown. Working from home, adapting to isolation, and finding 
+          creative ways to stay connected and productive.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B09RPXBMM1"
+          paperback: "https://www.amazon.com/dp/B09QNYJKDR"
+          
+      - title: "Then This Happened... Going outside again"
+        subtitle: "Book 5"
+        cover: /assets/images/book-covers/then-this-happened/then-this-happened-book5.jpg
+        description: |
+          Emerging from isolation. Rediscovering the outside world, reconnecting with 
+          people, and adjusting to life post-pandemic.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B0C1GVSXVF"
+          paperback: "https://www.amazon.com/dp/B0C1251BJZ"
+          
+      - title: "Then This Happened... An unexpected trip"
+        subtitle: "Book 6"
+        cover: /assets/images/book-covers/then-this-happened/then-this-happened-book6.jpg
+        description: |
+          A new chapter. Unexpected adventures, fresh perspectives, and continuing 
+          the journey with curiosity and resilience.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B0D4R6HMB6"
+          paperback: "https://www.amazon.com/dp/B0D4QKQWHV"
+          
+      - title: "Then This Happened... 2025"
+        subtitle: "Book 7"
+        cover: 
+        description: |
+          The 2025 collection is coming soon! Another year of daily comics capturing life's 
+          ups and downs, big moments and small victories.
+        pages: 
+        # Leave formats empty or commented out for "Coming Soon" books
+
+  - title: "Bobert and the Monster"
+    slug: bobert-and-the-monster
+    tagline: "Short, funny comics about two unlikely friends and their weird world."
+    description: |
+      A collection of short, humorous comics featuring Bobert and The Monster, plus other 
+      character stories. Silly, charming, and occasionally heartfelt—perfect for a quick laugh 
+      or a longer reading session.
+    hero_image: 
+    books:
+      - title: "Bobert and the Monster #1"
+        subtitle: "1"
+        cover: /assets/images/book-covers/bobert-monster/Bobert-monster-book-1-cover.jpg
+        description: |
+          The first collection of Bobert and the Monster comics. Meet the characters, 
+          enjoy the gags, and dive into their wonderfully weird world.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B0D6HDF6QH"
+          
+      - title: "Bobert and the Monster #2"
+        subtitle: "Comic Funnies"
+        cover: /assets/images/book-covers/bobert-monster/Bobert-monster-book-2-cover.png
+        description: |
+          More misadventures with Bobert and the Monster. New strips, more laughs, 
+          and even stranger situations than before.
+        pages: 
+        formats:
+          ebook_pdf: "#"
+          kindle: "https://www.amazon.com/dp/B0DRSJDF25"

@@ -1,0 +1,85 @@
+---
+layout: default
+title: Books
+---
+
+<section class="books-intro">
+  <div class="books-intro-header">
+    <h1 class="page-title">Books & Collections</h1>
+    <p class="books-tagline">Webcomics turned into books you can hold, read, and collect.</p>
+  </div>
+</section>
+
+{% for series in site.data.books.series %}
+<section class="book-series">
+  <div class="series-header">
+    <h2 class="series-title">{{ series.title }}</h2>
+    <p class="series-tagline">{{ series.tagline }}</p>
+  </div>
+  
+  <div class="series-description">
+    {{ series.description | markdownify }}
+  </div>
+  
+  <div class="books-grid">
+    {% for book in series.books %}
+    <article class="book-card">
+      <div class="book-cover">
+        {% if book.cover %}
+        <img src="{{ book.cover | relative_url }}" alt="{{ book.title }} cover">
+        {% else %}
+        <div class="book-cover-placeholder">
+          <span class="coming-soon-label">Coming Soon</span>
+        </div>
+        {% endif %}
+      </div>
+      
+      <div class="book-info">
+        <h3 class="book-title">{{ book.title }}</h3>
+        {% if book.subtitle %}
+        <span class="book-subtitle">{{ book.subtitle }}</span>
+        {% endif %}
+        
+        {% if book.description %}
+        <div class="book-description">
+          {{ book.description | markdownify }}
+        </div>
+        {% endif %}
+        
+        {% if book.formats %}
+        <div class="book-formats">
+          <p class="formats-label">Available in:</p>
+          <ul class="format-links">
+            {% if book.formats.paperback and book.formats.paperback != "#" %}
+            <li><a href="{{ book.formats.paperback }}" target="_blank" rel="noopener" class="format-link paperback">Paperback</a></li>
+            {% endif %}
+            {% if book.formats.kindle and book.formats.kindle != "#" %}
+            <li><a href="{{ book.formats.kindle }}" target="_blank" rel="noopener" class="format-link kindle">Kindle</a></li>
+            {% endif %}
+            {% if book.formats.ebook_pdf and book.formats.ebook_pdf != "#" %}
+            <li><a href="{{ book.formats.ebook_pdf }}" target="_blank" rel="noopener" class="format-link ebook">PDF</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        {% else %}
+        <div class="book-coming-soon">
+          <span class="coming-soon-badge">Coming Soon</span>
+        </div>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<section class="books-cta">
+  <div class="cta-content">
+    <h3>Want to stay updated on new releases?</h3>
+    <p>Follow the webcomics here on the site, and you'll be the first to know when new collections drop!</p>
+    <div class="cta-buttons">
+      <a href="{{ '/comics' | relative_url }}" class="btn-primary">Read Comics</a>
+      <a href="{{ '/blog' | relative_url }}" class="btn-secondary">Read Blog</a>
+    </div>
+  </div>
+</section>

@@ -1381,3 +1381,451 @@ footer p {
     gap: 1.5rem;
   }
 }
+
+/* ================================================
+   BOOKS PAGE STYLES
+   ================================================ */
+
+.books-intro {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--toxic-lime);
+  border: 6px solid var(--heavy-ink);
+  box-shadow: 12px 12px 0 rgba(15, 17, 26, 0.3);
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.books-intro-header {
+  position: relative;
+  display: inline-block;
+}
+
+.books-intro .page-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 
+    3px 3px 0 var(--goldenrod),
+    6px 6px 0 var(--shadow-purple);
+  transform: rotate(1deg);
+  display: inline-block;
+}
+
+.books-tagline {
+  font-size: 1.3rem;
+  color: var(--heavy-ink);
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Series Section */
+.book-series {
+  max-width: 1400px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+.series-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.series-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--goldenrod);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow: 
+    3px 3px 0 var(--heavy-ink),
+    6px 6px 0 var(--shadow-purple);
+  transform: rotate(-1deg);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.series-tagline {
+  font-size: 1.2rem;
+  color: var(--bling-blau);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.series-description {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: rgba(253, 249, 243, 0.9);
+  border: 4px solid var(--heavy-ink);
+  box-shadow: 8px 8px 0 rgba(15, 17, 26, 0.3);
+  transform: rotate(0.5deg);
+}
+
+.series-description p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.series-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* Book Card */
+.book-card {
+  background: var(--paper-white);
+  border: 4px solid var(--heavy-ink);
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: rotate(-0.5deg);
+  box-shadow: 12px 12px 0 rgba(15, 17, 26, 0.2);
+}
+
+.book-card:hover {
+  transform: rotate(0deg) translateY(-8px);
+  box-shadow: 16px 16px 0 rgba(15, 17, 26, 0.3);
+}
+
+.book-card:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+.book-card:nth-child(even):hover {
+  transform: rotate(0deg) translateY(-8px);
+}
+
+/* Book Cover */
+.book-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  margin-bottom: 1.5rem;
+  border: 4px solid var(--heavy-ink);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--sidewalk-frost), var(--glass-aqua));
+  box-shadow: 4px 4px 0 rgba(15, 17, 26, 0.15);
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.book-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      var(--glass-aqua),
+      var(--glass-aqua) 10px,
+      var(--storefront-teal) 10px,
+      var(--storefront-teal) 20px
+    );
+  position: relative;
+}
+
+.coming-soon-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--paper-white);
+  text-transform: uppercase;
+  background: var(--neon-orchid);
+  padding: 0.8rem 1.5rem;
+  border: 3px solid var(--heavy-ink);
+  transform: rotate(-8deg);
+  letter-spacing: 0.1em;
+  box-shadow: 4px 4px 0 rgba(15, 17, 26, 0.3);
+}
+
+/* Book Info */
+.book-info {
+  position: relative;
+}
+
+.book-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--heavy-ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.book-subtitle {
+  display: inline-block;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bling-blau);
+  background: var(--goldenrod);
+  padding: 0.3rem 0.8rem;
+  border: 2px solid var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  transform: rotate(-1deg);
+}
+
+.book-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--heavy-ink);
+  margin: 1rem 0;
+}
+
+.book-description p {
+  margin-bottom: 0.8rem;
+}
+
+.book-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Format Links */
+.book-formats {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 3px dashed var(--muted-ink);
+}
+
+.formats-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+}
+
+.format-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.format-link {
+  display: inline-block;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border: 3px solid var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 rgba(15, 17, 26, 0.2);
+}
+
+.format-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 rgba(15, 17, 26, 0.3);
+}
+
+.format-link.paperback {
+  background: var(--storefront-teal);
+  color: var(--paper-white);
+}
+
+.format-link.paperback:hover {
+  background: var(--glass-aqua);
+  color: var(--heavy-ink);
+}
+
+.format-link.kindle {
+  background: var(--bling-blau);
+  color: var(--paper-white);
+}
+
+.format-link.kindle:hover {
+  background: var(--toxic-lime);
+  color: var(--heavy-ink);
+}
+
+.format-link.ebook {
+  background: var(--awning-magenta);
+  color: var(--paper-white);
+}
+
+.format-link.ebook:hover {
+  background: var(--neon-orchid);
+  color: var(--paper-white);
+}
+
+/* Coming Soon Badge */
+.book-coming-soon {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 3px dashed var(--muted-ink);
+  text-align: center;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--paper-white);
+  background: var(--neon-orchid);
+  padding: 0.8rem 1.5rem;
+  border: 3px solid var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transform: rotate(-2deg);
+  box-shadow: 4px 4px 0 rgba(15, 17, 26, 0.2);
+}
+
+/* Books CTA */
+.books-cta {
+  max-width: 900px;
+  margin: 5rem auto 4rem;
+  padding: 3rem 2rem;
+  background: var(--paper-white);
+  border: 6px solid var(--heavy-ink);
+  text-align: center;
+  box-shadow: 16px 16px 0 rgba(15, 17, 26, 0.2);
+  transform: rotate(-0.5deg);
+}
+
+.books-cta h3 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--bling-blau);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 0 rgba(15, 17, 26, 0.1);
+}
+
+.books-cta p {
+  font-size: 1.2rem;
+  color: var(--heavy-ink);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 4px solid var(--heavy-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 0 rgba(15, 17, 26, 0.2);
+}
+
+.btn-primary {
+  background: var(--toxic-lime);
+  color: var(--heavy-ink);
+}
+
+.btn-primary:hover {
+  background: var(--goldenrod);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 rgba(15, 17, 26, 0.3);
+}
+
+.btn-secondary {
+  background: var(--bling-blau);
+  color: var(--paper-white);
+}
+
+.btn-secondary:hover {
+  background: var(--neon-orchid);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 rgba(15, 17, 26, 0.3);
+}
+
+/* Responsive Books Page */
+@media (max-width: 768px) {
+  .books-intro {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .books-intro .page-title {
+    font-size: 2rem;
+  }
+  
+  .books-tagline {
+    font-size: 1.1rem;
+  }
+  
+  .series-title {
+    font-size: 2rem;
+  }
+  
+  .series-description {
+    padding: 1.5rem;
+  }
+  
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .book-card {
+    padding: 1.2rem;
+  }
+  
+  .books-cta {
+    padding: 2rem 1.5rem;
+    margin: 3rem 1rem;
+  }
+  
+  .books-cta h3 {
+    font-size: 1.6rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
+
