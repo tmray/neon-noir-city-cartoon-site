@@ -1025,7 +1025,10 @@ footer p {
 
 @media (max-width: 640px) {
   body { font-size: 17px; }
-  .nav-menu { gap: 10px; }
+  .nav-menu { 
+    gap: 10px;
+    row-gap: 12px;
+  }
   .nav-menu a { font-size: 1rem; }
   .zine-grid { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }
