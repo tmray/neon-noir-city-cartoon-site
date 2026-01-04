@@ -1402,7 +1402,7 @@ footer p {
   padding: 3rem 2rem;
   text-align: center;
   background: var(--toxic-lime);
-  border: 6px solid var(--heavy-ink);
+  border: 6px double var(--heavy-ink);
   box-shadow: 12px 12px 0 rgba(15, 17, 26, 0.3);
   transform: rotate(-1deg);
   position: relative;
@@ -1422,8 +1422,7 @@ footer p {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-shadow: 
-    3px 3px 0 var(--goldenrod),
-    6px 6px 0 var(--shadow-purple);
+    3px 3px 0 var(--goldenrod);
   transform: rotate(1deg);
   display: inline-block;
 }
