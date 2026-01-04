@@ -22,4 +22,10 @@ I spent more time on the layout of the storyboards for this series. I wanted to 
 
 ![illustration of a cartoon storyboard](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHdYqBDyZxWIHTw1iPse-aUzqNeGCrY2kmnm0gboxL4NJzOW8NkvbhkIYQ-lvKUZYEfe4UUe7rr-Xa2U4OVQHlv6BPASOKrAp6lNBvCwGpyHdcE-ZX0XSdHe_ftV-ZDqRHCEdoeYOyBsU/w640-h514/scene1-3.jpg)
 
+Here's the video again
+
+{% include video-embed.html 
+   video_id="vnyF4fLvZRQ" 
+   title="Xylus and Dexter In Space!" %}
+
 *Note: Replace with your actual video URL!*

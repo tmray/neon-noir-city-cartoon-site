@@ -1,0 +1,25 @@
+{% comment %}
+  Video embed component
+  Usage: {% include video-embed.html 
+           video_id="dQw4w9WgXcQ" 
+           title="Optional video caption" %}
+  
+  Parameters:
+  - video_id (required): YouTube video ID
+  - title (optional): Caption to display below the video
+{% endcomment %}
+
+<div class="video-embed">
+  <iframe 
+    src="https://www.youtube.com/embed/{{ include.video_id }}" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    loading="lazy"
+    title="{{ include.title | default: 'Video' }}">
+  </iframe>
+</div>
+
+{% if include.title %}
+<p class="video-embed-caption">{{ include.title }}</p>
+{% endif %}
