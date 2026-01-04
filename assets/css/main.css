@@ -1848,9 +1848,7 @@ footer p {
   margin: 3rem 0;
   position: relative;
   transform: rotate(-0.5deg);
-  box-shadow: 
-    8px 8px 0 var(--toxic-lime),
-    8px 8px 0 4px var(--heavy-ink);
+  box-shadow: 8px 8px 0 var(--toxic-lime);
 }
 
 .email-signup::before {
