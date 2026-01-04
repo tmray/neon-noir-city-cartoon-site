@@ -2,6 +2,7 @@
 title: "Xylus and Dexter in Space! \"Fly Right\" Episode 1 - Cartoon animation"
 date: 2026-01-01 11:00:00 -0600
 video_url: "https://www.youtube.com/embed/vnyF4fLvZRQ"
+image: https://img.youtube.com/vi/vnyF4fLvZRQ/sddefault.jpg
 ---
 
 ## Episode 1 of my animated cartoon series Xylus and Dexter in Space!

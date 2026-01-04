@@ -6,6 +6,10 @@ author: "Tom Ray"
 baseurl: ""
 url: "http://localhost:4000"
 
+# SEO & Social
+logo: /assets/images/site-logo.png
+image: /assets/images/og-default.jpg
+
 # Plugins
 plugins:
   - jekyll-feed

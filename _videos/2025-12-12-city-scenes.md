@@ -2,6 +2,7 @@
 title: "Drawing City Scenes with Attitude"
 date: 2025-12-12 11:00:00 -0500
 video_url: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+image: https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg
 ---
 
 Urban sketching meets comic book style! In this tutorial, I show you how to capture the energy of city scenes while maintaining that graphic, comic-inspired look.
