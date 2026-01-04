@@ -569,11 +569,6 @@ footer p {
   color: rgba(253,249,243,0.85);
 }
 
-/* Shadowless mode */
-*, *::before, *::after {
-  box-shadow: none !important;
-}
-
 /* Comic Pages */
 .comic-page {
   max-width: 900px;
