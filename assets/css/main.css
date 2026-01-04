@@ -1838,3 +1838,151 @@ footer p {
   }
 }
 
+/* ==========================
+   EMAIL SIGNUP COMPONENT
+   ========================== */
+.email-signup {
+  background: var(--paper-white);
+  border: 5px solid var(--heavy-ink);
+  padding: 2rem;
+  margin: 3rem 0;
+  position: relative;
+  transform: rotate(-0.5deg);
+  box-shadow: 
+    8px 8px 0 var(--toxic-lime),
+    8px 8px 0 4px var(--heavy-ink);
+}
+
+.email-signup::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 3px dashed var(--neon-orchid);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.email-signup-content {
+  position: relative;
+  z-index: 1;
+}
+
+.email-signup-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bling-blau);
+  margin-bottom: 0.75rem;
+  text-shadow: 3px 3px 0 var(--toxic-lime);
+  transform: rotate(-1deg);
+}
+
+.email-signup-description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--heavy-ink);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.email-signup-form {
+  margin-top: 1.5rem;
+}
+
+.email-signup-fields {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.email-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 0.9rem 1.2rem;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  background: white;
+  border: 4px solid var(--heavy-ink);
+  border-radius: 0;
+  color: var(--heavy-ink);
+  transition: all 0.2s ease;
+  box-shadow: 
+    4px 4px 0 var(--bling-blau);
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: var(--neon-orchid);
+  box-shadow: 
+    4px 4px 0 var(--neon-orchid),
+    0 0 20px var(--card-glow);
+  transform: translateY(-2px);
+}
+
+.email-input::placeholder {
+  color: var(--muted-ink);
+  opacity: 0.7;
+}
+
+.email-submit-btn {
+  padding: 0.9rem 2rem;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--toxic-lime);
+  color: var(--heavy-ink);
+  border: 4px solid var(--heavy-ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 
+    6px 6px 0 var(--shadow-purple);
+  white-space: nowrap;
+}
+
+.email-submit-btn:hover {
+  background: var(--goldenrod);
+  transform: translate(-2px, -2px);
+  box-shadow: 
+    8px 8px 0 var(--shadow-purple);
+}
+
+.email-submit-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 
+    2px 2px 0 var(--shadow-purple);
+}
+
+.email-signup-privacy {
+  font-size: 0.85rem;
+  color: var(--muted-ink);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .email-signup {
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .email-signup-title {
+    font-size: 1.5rem;
+  }
+  
+  .email-signup-fields {
+    flex-direction: column;
+  }
+  
+  .email-input,
+  .email-submit-btn {
+    width: 100%;
+  }
+}
+

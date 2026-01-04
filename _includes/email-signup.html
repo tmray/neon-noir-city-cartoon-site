@@ -1,0 +1,35 @@
+{% comment %}
+  Email signup form component
+  Usage: {% include email-signup.html 
+           title="Optional custom title"
+           description="Optional custom description"
+           cta="Optional custom button text" %}
+{% endcomment %}
+
+{% assign signup_title = include.title | default: "Join the Mailing List!" %}
+{% assign signup_description = include.description | default: "Get new comics, behind-the-scenes content, and exclusive downloads delivered straight to your inbox." %}
+{% assign signup_cta = include.cta | default: "Sign Me Up!" %}
+
+<div class="email-signup">
+  <div class="email-signup-content">
+    <h3 class="email-signup-title">{{ signup_title }}</h3>
+    <p class="email-signup-description">{{ signup_description }}</p>
+    
+    <form class="email-signup-form" action="#" method="post">
+      <div class="email-signup-fields">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="your@email.com" 
+          required 
+          class="email-input"
+          aria-label="Email address"
+        />
+        <button type="submit" class="email-submit-btn">
+          {{ signup_cta }}
+        </button>
+      </div>
+      <p class="email-signup-privacy">No spam, unsubscribe anytime. Your email stays safe with us.</p>
+    </form>
+  </div>
+</div>
