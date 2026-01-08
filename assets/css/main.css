@@ -596,11 +596,72 @@ h3 { font-size: 1.7rem; }
 /* Footer */
 footer {
   margin-top: 70px;
-  padding: 36px 0 46px;
+  padding: 46px 0 56px;
   background: rgba(0,0,0,0.35);
   border-top: 2px solid rgba(255,255,255,0.12);
   text-align: center;
   color: var(--muted-ink);
+}
+
+/* Social Links - Comic card style */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 60px;
+  background: var(--toxic-lime);
+  color: var(--heavy-ink);
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 5px solid var(--heavy-ink);
+  box-shadow: 4px 4px 0 rgba(15, 17, 26, 0.3);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  transform: rotate(-0.5deg);
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.social-text {
+  line-height: 1;
+}
+
+.social-link:nth-child(2n) {
+  background: var(--bling-blau);
+  color: var(--paper-white);
+  transform: rotate(0.5deg);
+}
+
+.social-link:nth-child(3n) {
+  background: var(--neon-orchid);
+  color: var(--paper-white);
+}
+
+.social-link:nth-child(4n) {
+  background: var(--goldenrod);
+  color: var(--heavy-ink);
+}
+
+.social-link:hover {
+  transform: rotate(0) scale(1.05);
+  box-shadow: 6px 6px 0 rgba(15, 17, 26, 0.4);
 }
 
 footer p {
