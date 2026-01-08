@@ -1,5 +1,13 @@
 <footer>
   <div class="container">
+    <div class="social-links">
+      {% for link in site.data.social.links %}
+      <a href="{{ link.url }}" class="social-link" title="{{ link.name }}" target="_blank" rel="noopener">
+        <span class="social-icon">{{ link.icon }}</span>
+        <span class="social-text">{{ link.name }}</span>
+      </a>
+      {% endfor %}
+    </div>
     <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }} - Keepin' it real in Cosmopolis</p>
   </div>
 </footer>
