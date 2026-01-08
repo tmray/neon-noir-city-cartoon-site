@@ -4,51 +4,36 @@ title: About
 ---
 
 <div class="hero" style="padding: 60px 20px;">
-  <h1 class="hero-title">About HomeMade Cartoons</h1>
-  <p class="hero-subtitle">Comics, characters, and the artist behind it all</p>
+  <h1 class="hero-title">{{ site.data.about.hero.title }}</h1>
+  <p class="hero-subtitle">{{ site.data.about.hero.subtitle }}</p>
 </div>
 
 <div class="about-page">
   <section class="about-section">
     <h2 class="section-title">The Comics</h2>
     
+    {% for comic in site.data.about.comics %}
     <article class="about-comic">
-      <h3 class="comic-series-title">Then This Happened</h3>
+      <h3 class="comic-series-title">{{ comic.title }}</h3>
       <div class="about-content">
-        <p>A slice-of-life comic series capturing those ridiculous everyday moments that make you go "did that really just happen?" From coffee disasters to grocery store encounters, these four-panel strips chronicle the chaos of modern life.</p>
-        <p>Each episode is a standalone story, perfect for quick laughs and moments of "oh yeah, I've been there too."</p>
-        <a class="pill-link" href="{{ '/then-this-happened' | relative_url }}">Read This Comic</a>
+        <p>{{ comic.description }}</p>
+        <p>{{ comic.extra }}</p>
+        <a class="pill-link" href="{{ comic.link_url | relative_url }}">{{ comic.link_text }}</a>
       </div>
     </article>
-    
-    <article class="about-comic">
-      <h3 class="comic-series-title">Bobert and the Monster</h3>
-      <div class="about-content">
-        <p>An ongoing series following Bobert, an ordinary guy who discovers his new roommate is... well, a monster. But not the scary kind. More like the "has 17 locks on their door and questionable life choices" kind.</p>
-        <p>Follow their adventures as they navigate roommate dynamics, city life, and the occasional supernatural weirdness that comes with living in Cosmopolis.</p>
-        <a class="pill-link" href="{{ '/bobert-and-the-monster' | relative_url }}">Read This Comic</a>
-      </div>
-    </article>
+    {% endfor %}
   </section>
 
   <section class="about-section">
     <h2 class="section-title">The Characters</h2>
     
     <div class="characters-grid">
+      {% for character in site.data.about.characters %}
       <article class="character-card">
-        <h3 class="character-name">Bobert</h3>
-        <p class="character-description">An everyday guy trying to live a normal life in a not-so-normal city. He's optimistic, a little naive, and surprisingly chill about having a monster for a roommate. Works a day job, dreams of something more, and usually ends up in situations he didn't sign up for.</p>
+        <h3 class="character-name">{{ character.name }}</h3>
+        <p class="character-description">{{ character.description }}</p>
       </article>
-      
-      <article class="character-card">
-        <h3 class="character-name">Monster</h3>
-        <p class="character-description">Bobert's mysterious roommate who happens to be a monster. Secretive, paranoid (hence the 17 locks), but ultimately good-hearted. Has a complicated past they'd rather not talk about and an even more complicated present. Likes pizza, hates surprises.</p>
-      </article>
-      
-      <article class="character-card">
-        <h3 class="character-name">You (Sort Of)</h3>
-        <p class="character-description">The protagonist of "Then This Happened" is basically all of us – trying to get through the day without spilling coffee on our laptops, dealing with everyday absurdities, and wondering why life has to be this way. You know, relatable chaos.</p>
-      </article>
+      {% endfor %}
     </div>
   </section>
 
@@ -56,13 +41,9 @@ title: About
     <h2 class="section-title">About the Artist</h2>
     
     <div class="about-content">
-      <p>Hey! I'm the cartoonist behind HomeMade Cartoons. I create comics and illustrations inspired by everyday life, Mission Hill aesthetics, and the beautiful chaos of city living.</p>
-      
-      <p>My work blends hand-drawn comic art with digital tools, aiming for that indie zine feel – a little wonky, a lot colorful, and always authentic. I'm influenced by classic comic strips, indie comics, and the neon-noir vibe of shows like Mission Hill.</p>
-      
-      <p>When I'm not drawing comics, I'm probably spilling coffee (inspiration for "Then This Happened"), watching animated shows, or wandering around the city looking for the next story to tell.</p>
-      
-      <p>This site is my creative playground – a place to share comics, drawings, videos of my process, and random thoughts about art and life. Thanks for stopping by Cosmopolis!</p>
+      {% for paragraph in site.data.about.artist.paragraphs %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
       
       <div class="hero-actions" style="margin-top: 2rem;">
         <a class="pill-link" href="{{ '/comics' | relative_url }}">Read All Comics</a>
