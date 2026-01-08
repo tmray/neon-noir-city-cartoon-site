@@ -808,7 +808,7 @@ footer p {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.3rem;
   margin: 0;
-  color: var(--paper-white);
+  color: var(--heavy-ink);
 }
 
 .comics-grid {
