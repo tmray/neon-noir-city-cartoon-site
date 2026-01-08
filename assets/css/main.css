@@ -1351,6 +1351,7 @@ footer p {
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0 var(--toxic-lime);
 }
 
 .about-content p {
@@ -1416,10 +1417,6 @@ footer p {
   
   .about-section .section-title {
     font-size: 1.8rem;
-  }
-  
-  .comic-series-title {
-    font-size: 1.5rem;
   }
   
   .about-comic {

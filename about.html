@@ -30,6 +30,9 @@ title: About
     <div class="characters-grid">
       {% for character in site.data.about.characters %}
       <article class="character-card">
+        {% if character.image %}
+        <img src="{{ character.image | relative_url }}" alt="{{ character.name }}" class="character-image">
+        {% endif %}
         <h3 class="character-name">{{ character.name }}</h3>
         <p class="character-description">{{ character.description }}</p>
       </article>
@@ -39,6 +42,10 @@ title: About
 
   <section class="about-section">
     <h2 class="section-title">About the Artist</h2>
+    
+    {% if site.data.about.artist.image %}
+    <img src="{{ site.data.about.artist.image | relative_url }}" alt="Artist Photo" class="artist-photo">
+    {% endif %}
     
     <div class="about-content">
       {% for paragraph in site.data.about.artist.paragraphs %}
