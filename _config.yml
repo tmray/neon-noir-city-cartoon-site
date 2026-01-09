@@ -8,7 +8,7 @@ url: "http://localhost:4000"
 
 # SEO & Social
 logo: /assets/images/logo/homemade-cartoons-logo-letters-white-bg-100px.png
-image: /assets/images/og-default.jpg
+image: /assets/images/logo/homemade-cartoons-logo-300px.png
 
 # Plugins
 plugins:
